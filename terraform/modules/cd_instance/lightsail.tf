@@ -1,8 +1,4 @@
-provider "aws" {
-  region = var.aws_region
-}
-
-resource "aws_lightsail_instance" "changedetection" {
+﻿resource "aws_lightsail_instance" "changedetection" {
   name              = "changedetection-instance"
   availability_zone = "${var.aws_region}a"
   blueprint_id      = "ubuntu_20_04"
@@ -50,13 +46,13 @@ resource "aws_lightsail_instance_public_ports" "changedetection_ports" {
     protocol  = "tcp"
     from_port = 22
     to_port   = 22
-    cidrs     = [var.whitelist_ip]
+    cidrs     = var.whitelist_ips
   }
 
   port_info {
     protocol  = "tcp"
     from_port = 5000
     to_port   = 5000
-    cidrs     = [var.whitelist_ip]
+    cidrs     = var.whitelist_ips
   }
 }
