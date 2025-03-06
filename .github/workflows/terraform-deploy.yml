@@ -29,17 +29,17 @@ jobs:
       
     - name: Terraform Init
       working-directory: ./terraform/dev
-      run: terraform -chdir=terraform init
+      run: terraform init
         
     - name: Terraform Validate
       working-directory: ./terraform/dev
-      run: terraform -chdir=terraform validate
+      run: terraform validate
 
     - name: Terraform Plan
       working-directory: ./terraform/dev    
-      run: terraform -chdir=terraform plan -input=false
+      run: terraform plan -input=false
       
     - name: Terraform Apply
       working-directory: ./terraform/dev
       if: github.ref == 'refs/heads/main'
-      run: terraform -chdir=terraform apply -auto-approve -input=false
+      run: terraform apply -auto-approve -input=false
