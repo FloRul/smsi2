@@ -10,3 +10,10 @@ variable "whitelist_ips" {
   sensitive   = true
   nullable    = false
 }
+
+variable "disk_size_gb" {
+  description = "Size of the detachable disk in GB"
+  type        = number
+  default     = 8
+  nullable    = false
+}
