@@ -57,6 +57,17 @@ resource "aws_lightsail_instance" "changedetection" {
   EOF
 }
 
+# Create a static IP for the instance
+resource "aws_lightsail_static_ip" "changedetection_static_ip" {
+  name = "changedetection-static-ip"
+}
+
+# Attach the static IP to the instance
+resource "aws_lightsail_static_ip_attachment" "changedetection_static_ip_attachment" {
+  static_ip_name = aws_lightsail_static_ip.changedetection_static_ip.name
+  instance_name  = aws_lightsail_instance.changedetection.name
+}
+
 # Create a Lightsail disk
 resource "aws_lightsail_disk" "changedetection_data" {
   name              = "changedetection-data"
