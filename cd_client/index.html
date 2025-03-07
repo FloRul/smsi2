@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChangeDetection.io Client</title>
+  <title>Levio veille réglementaire</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="app-container">
     <header class="app-header">
       <div class="logo">
         <i class="fas fa-search-location"></i>
-        <h1>ChangeDetection<span>.io Client</span></h1>
+        <h1><span>Veille réglementaire</span></h1>
       </div>
       <div class="connection-status">
         <div class="status-indicator" id="statusIndicator"></div>
@@ -66,7 +68,7 @@
           <!-- Watch items will be populated here -->
         </ul>
       </div>
-      
+
       <div class="content-area">
         <div class="welcome-screen" id="welcomeScreen">
           <div class="welcome-icon">
@@ -75,7 +77,7 @@
           <h2>Welcome to ChangeDetection.io Client</h2>
           <p>Select a watch from the sidebar or create a new one to get started.</p>
         </div>
-        
+
         <div class="watch-details hidden" id="watchDetails">
           <div class="watch-details-header">
             <h2 id="watchTitle">Watch Title</h2>
@@ -91,18 +93,18 @@
               </button>
             </div>
           </div>
-          
+
           <div class="watch-info">
             <div class="info-card">
               <div class="info-card-title">URL</div>
               <div class="info-card-content" id="watchUrl">https://example.com</div>
             </div>
-            
+
             <div class="info-card">
               <div class="info-card-title">Last Checked</div>
               <div class="info-card-content" id="lastChecked">Never</div>
             </div>
-            
+
             <div class="info-card">
               <div class="info-card-title">Status</div>
               <div class="info-card-content" id="watchStatus">
@@ -110,14 +112,14 @@
               </div>
             </div>
           </div>
-          
+
           <div class="watch-content">
             <div class="tabs">
               <button class="tab-btn active" data-tab="history">History</button>
               <button class="tab-btn" data-tab="settings">Settings</button>
               <button class="tab-btn" data-tab="preview">Preview</button>
             </div>
-            
+
             <div class="tab-content active" id="historyTab">
               <div class="history-list" id="historyList">
                 <!-- History items will be populated here -->
@@ -127,7 +129,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="tab-content" id="settingsTab">
               <div class="settings-form">
                 <div class="form-group">
@@ -156,7 +158,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="tab-content" id="previewTab">
               <div class="preview-container">
                 <div class="iframe-container">
@@ -215,65 +217,6 @@
         </div>
       </div>
     </div>
-    
-    <!-- Connection Settings Modal -->
-    <div class="modal" id="connectionSettingsModal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>Connection Settings</h3>
-          <button class="close-btn" id="closeConnectionSettingsModal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form id="updateConnectionForm">
-            <div class="form-group">
-              <label for="updateApiUrl">API URL</label>
-              <input type="url" id="updateApiUrl" placeholder="http://your-instance:5000" required>
-            </div>
-            <div class="form-group">
-              <label for="updateApiKey">API Key</label>
-              <div class="password-input">
-                <input type="password" id="updateApiKey" placeholder="Your API key from settings page" required>
-                <button type="button" class="toggle-password" id="toggleUpdatePassword">
-                  <i class="fas fa-eye"></i>
-                </button>
-              </div>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Update Connection</button>
-              <button type="button" class="btn btn-secondary" id="cancelUpdateConnection">Cancel</button>
-              <button type="button" class="btn btn-danger" id="disconnectBtn">Disconnect</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-          <h3>Connection Settings</h3>
-          <button class="close-btn" id="closeConnectionSettingsModal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form id="updateConnectionForm">
-            <div class="form-group">
-              <label for="updateApiUrl">API URL</label>
-              <input type="url" id="updateApiUrl" placeholder="http://your-instance:5000" required>
-            </div>
-            <div class="form-group">
-              <label for="updateApiKey">API Key</label>
-              <div class="password-input">
-                <input type="password" id="updateApiKey" placeholder="Your API key from settings page" required>
-                <button type="button" class="toggle-password" id="toggleUpdatePassword">
-                  <i class="fas fa-eye"></i>
-                </button>
-              </div>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Update Connection</button>
-              <button type="button" class="btn btn-secondary" id="cancelUpdateConnection">Cancel</button>
-              <button type="button" class="btn btn-danger" id="disconnectBtn">Disconnect</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
 
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
@@ -285,10 +228,11 @@
       <p id="loadingText">Loading...</p>
     </div>
   </div>
-  
+
   <!-- Toasts Container -->
   <div class="toast-container" id="toastContainer"></div>
 
   <script src="js/app.js"></script>
 </body>
+
 </html>

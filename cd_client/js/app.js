@@ -641,10 +641,10 @@ document.addEventListener('DOMContentLoaded', () =>
       await loadWatches();
       selectWatch(state.currentWatchId);
 
-      showToast('Settings saved successfully', 'success');
+      showToast('Paramètres mis à jour', 'success');
     } catch (error) {
       console.error('Error saving settings:', error);
-      showToast('Failed to save settings', 'error');
+      showToast('Erreur de la mise à jour des paramètres', 'error');
     } finally {
       hideLoading();
     }
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', () =>
 
     const url = elements.newWatchUrl.value.trim();
     if (!url) {
-      showToast('URL is required', 'error');
+      showToast('L\'adresse est requise', 'error');
       return;
     }
 
@@ -703,8 +703,8 @@ document.addEventListener('DOMContentLoaded', () =>
 
       showToast('Watch created successfully', 'success');
     } catch (error) {
-      console.error('Error creating watch:', error);
-      showToast('Failed to create watch', 'error');
+      console.error('Erreur lors de la création de la watch:', error);
+      showToast('Erreur lors de la création de la watch', 'error');
     } finally {
       hideLoading();
     }
@@ -748,7 +748,7 @@ document.addEventListener('DOMContentLoaded', () =>
     const apiKey = elements.updateApiKeyInput.value.trim();
 
     if (!apiUrl || !apiKey) {
-      showToast('Please enter both API URL and API Key', 'error');
+      showToast('Entrer l\'adresse de l\'API ainsi que la clé d\'API correspondante', 'error');
       return;
     }
 
@@ -776,7 +776,7 @@ document.addEventListener('DOMContentLoaded', () =>
       // Reload watches with new connection
       await loadWatches();
 
-      showToast('Connection updated successfully', 'success');
+      showToast('Mise à jour effectué', 'success');
     } catch (error) {
       console.error('Connection update failed:', error);
 
@@ -784,7 +784,7 @@ document.addEventListener('DOMContentLoaded', () =>
       state.apiUrl = oldApiUrl;
       state.apiKey = oldApiKey;
 
-      showToast(`Connection update failed: ${error.message}`, 'error');
+      showToast(`Echec de la mise à jour des information de connection: ${error.message}`, 'error');
       updateConnectionStatus(true); // Keep the connected status since we reverted
     } finally {
       hideLoading();
@@ -821,7 +821,7 @@ document.addEventListener('DOMContentLoaded', () =>
   {
     if (!state.currentWatchId) return;
 
-    showLoading('Deleting watch...');
+    showLoading('Suppression en cours...');
 
     try {
       await makeApiRequest('DELETE', `/watch/${state.currentWatchId}`);
@@ -841,7 +841,7 @@ document.addEventListener('DOMContentLoaded', () =>
       // Update watch list
       renderWatchList();
 
-      showToast('Watch deleted successfully', 'success');
+      showToast('Suppression effectuée', 'success');
     } catch (error) {
       console.error('Error deleting watch:', error);
       showToast('Failed to delete watch', 'error');
