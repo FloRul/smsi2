@@ -580,7 +580,7 @@ document.addEventListener('DOMContentLoaded', () =>
     showLoading('Checking for changes...');
 
     try {
-      await makeApiRequest('POST', `/watch/${state.currentWatchId}/check`);
+      await makeApiRequest('GET', `/watch/${state.currentWatchId}/recheck=1`);
       showToast('Check triggered successfully', 'success');
 
       // Reload watch data
