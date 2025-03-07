@@ -1,0 +1,89 @@
+/* Header */
+.app-header {
+  height: var(--header-height);
+  background: rgba(0, 76, 95, 0.2);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo i {
+  font-size: 26px;
+  color: var(--accent-color);
+  margin-right: 15px;
+  text-shadow: 0 0 10px rgba(140, 197, 64, 0.6);
+}
+
+.logo h1 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, var(--text-color), var(--accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.logo h1 span {
+  font-weight: 300;
+  opacity: 0.9;
+  color: var(--text-secondary);
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  border: 1px solid var(--glass-border);
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--danger-color);
+  margin-right: 10px;
+  box-shadow: 0 0 8px var(--danger-color);
+  transition: all 0.3s ease;
+}
+
+.status-indicator.connected {
+  background-color: var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+#connectionStatus {
+  margin-right: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+#connectionSettingsBtn {
+  margin-left: 8px;
+  opacity: 0.8;
+  transition: all 0.2s;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#connectionSettingsBtn:hover {
+  opacity: 1;
+  color: var(--accent-color);
+  transform: rotate(30deg);
+}

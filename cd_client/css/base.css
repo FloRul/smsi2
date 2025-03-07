@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DINRegular', 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 76, 95, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(140, 197, 64, 0.4) 0%, transparent 50%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Glass Effect Mixin (For reuse) */
+.glass-effect {
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--border-radius);
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main App Layout */
+.app-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  margin: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  background: rgba(0, 76, 95, 0.05);
+  position: relative;
+}
+
+.app-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, 
+    rgba(0, 76, 95, 0.05),
+    rgba(140, 197, 64, 0.05));
+  border-radius: var(--border-radius);
+}

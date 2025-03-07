@@ -1,0 +1,102 @@
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  padding: 12px 20px;
+  background: rgba(0, 76, 95, 0.2);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: var(--border-radius);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  max-width: 400px;
+  transform: translateX(120%);
+  animation: slide-in 0.3s forwards, fade-out 0.3s 4.7s forwards;
+  border: 1px solid var(--glass-border);
+}
+
+.toast i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.toast.success i {
+  color: var(--accent-color);
+  text-shadow: 0 0 8px rgba(140, 197, 64, 0.5);
+}
+
+.toast.error i {
+  color: var(--danger-color);
+  text-shadow: 0 0 8px rgba(239, 92, 101, 0.5);
+}
+
+.toast.info i {
+  color: var(--primary-color);
+  text-shadow: 0 0 8px rgba(0, 76, 95, 0.5);
+}
+
+.toast.warning i {
+  color: var(--warning-color);
+  text-shadow: 0 0 8px rgba(243, 156, 18, 0.5);
+}
+
+.toast-message {
+  flex: 1;
+  color: var(--text-color);
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+@keyframes slide-in {
+  from { transform: translateX(120%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(120%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 100%;
+  }
+  
+  .app-main {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    height: 50vh;
+    border-right: none;
+    border-bottom: 1px solid var(--glass-border);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-left-radius: 0;
+  }
+  
+  .content-area {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--border-radius);
+  }
+  
+  .watch-info {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .toast {
+    min-width: 250px;
+    max-width: 300px;
+  }
+}

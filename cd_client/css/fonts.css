@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'DINRegular';
+  src: url('../fonts/DINRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Fix for FontAwesome icon centering */
+.fas, .far, .fab, .fa {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+}
