@@ -12,6 +12,15 @@ resource "aws_security_group" "changedetection_lb_sg" {
     description = "HTTP from whitelisted IPs"
   }
 
+  # Only allow inbound HTTP traffic from whitelisted IPs
+  ingress {
+    from_port   = 5000
+    to_port     = 5000
+    protocol    = "tcp"
+    cidr_blocks = var.whitelist_ips
+    description = "HTTP from whitelisted IPs"
+  }
+
   # Only allow inbound HTTPS traffic from whitelisted IPs
   ingress {
     from_port   = 443
