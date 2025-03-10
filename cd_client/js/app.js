@@ -425,30 +425,11 @@ document.addEventListener('DOMContentLoaded', () =>
       const historyData = await response.json();
       console.log('History response:', historyData);
 
-      // Handle different possible API response formats
-      let historyItems = [];
-
-      if (Array.isArray(historyData)) {
-        historyItems = historyData;
-      } else if (historyData && typeof historyData === 'object') {
-        // Check if it has a history or snapshots property
-        if (Array.isArray(historyData.history)) {
-          historyItems = historyData.history;
-        } else if (Array.isArray(historyData.snapshots)) {
-          historyItems = historyData.snapshots;
-        } else if (Array.isArray(historyData.entries)) {
-          historyItems = historyData.entries;
-        } else {
-          // Try to convert object to array if it's an object with numeric keys
-          const items = Object.entries(historyData)
-            .filter(([key]) => !isNaN(key) || key.match(/^\d+$/))
-            .map(([, value]) => value);
-
-          if (items.length > 0) {
-            historyItems = items;
-          }
-        }
-      }
+      // Convert object with timestamps as keys to array of objects
+      const historyItems = Object.entries(historyData).map(([timestamp, path]) => ({
+        timestamp: parseInt(timestamp),
+        path: path
+      }));
 
       console.log('Processed history items:', historyItems);
 
@@ -477,68 +458,26 @@ document.addEventListener('DOMContentLoaded', () =>
   // Render history list
   function renderHistoryList(historyItems)
   {
-    if (!Array.isArray(historyItems)) {
-      console.error('History items is not an array:', historyItems);
-      elements.historyList.innerHTML = `
-        <div class="empty-state">
-          <i class="fas fa-exclamation-triangle"></i>
-          <p>Invalid history data format</p>
-        </div>
-      `;
-      return;
-    }
-
     elements.historyList.innerHTML = '';
 
-    historyItems.forEach(item =>
-    {
-      if (!item || typeof item !== 'object') return;
+    historyItems.sort((a, b) => b.timestamp - a.timestamp) // Sort newest first
+      .forEach(item =>
+      {
+        const timestamp = new Date(item.timestamp * 1000);
 
-      // Handle different property names for "changed" status
-      const hasChanged = item.has_changed || item.changed || false;
+        const historyItem = document.createElement('div');
+        historyItem.className = 'history-item';
 
-      // Handle different timestamp formats and property names
-      let timestamp;
-      try {
-        if (item.timestamp) {
-          // Convert to number if it's a string
-          const ts = typeof item.timestamp === 'string' ? parseInt(item.timestamp) : item.timestamp;
-          timestamp = new Date(ts * 1000); // Assuming timestamp is in seconds
-        } else if (item.time) {
-          const ts = typeof item.time === 'string' ? parseInt(item.time) : item.time;
-          timestamp = new Date(ts * 1000);
-        } else if (item.date) {
-          timestamp = new Date(item.date);
-        } else {
-          timestamp = new Date(); // Fallback to current time
-        }
-      } catch (e) {
-        console.error('Error parsing timestamp:', e);
-        timestamp = new Date(); // Fallback to current time
-      }
+        historyItem.innerHTML = `
+          <div class="history-info">
+            <div class="history-date">${timestamp.toLocaleDateString()}</div>
+            <div class="history-time">${timestamp.toLocaleTimeString()}</div>
+          </div>
+        `;
 
-      // Validate date
-      if (isNaN(timestamp.getTime())) {
-        timestamp = new Date(); // Fallback to current time if invalid
-      }
+        elements.historyList.appendChild(historyItem);
+      });
 
-      const historyItem = document.createElement('div');
-      historyItem.className = 'history-item';
-
-      historyItem.innerHTML = `
-        <div class="history-status ${hasChanged ? 'changed' : 'unchanged'}">
-          <i class="fas ${hasChanged ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i>
-        </div>
-        <div class="history-info">
-          <div class="history-date">${timestamp.toLocaleDateString()}</div>
-          <div class="history-time">${timestamp.toLocaleTimeString()}</div>
-        </div>
-      `;
-
-      elements.historyList.appendChild(historyItem);
-    });
-
-    // Show empty state if no items were rendered
     if (elements.historyList.children.length === 0) {
       elements.historyList.innerHTML = `
         <div class="empty-state">
