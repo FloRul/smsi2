@@ -10,3 +10,9 @@ variable "whitelist_ips" {
   sensitive   = true
   default     = []
 }
+
+variable "disk_size_gb" {
+  description = "Size of the EFS file system in GB"
+  type        = number
+  default     = 10
+}
