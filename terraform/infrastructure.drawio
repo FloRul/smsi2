@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="infrastructure" name="ChangeDetection.io Infrastructure">
-        <mxGraphModel dx="794" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0" adaptiveColors="simple">
+        <mxGraphModel dx="2392" dy="957" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0" adaptiveColors="simple">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -64,7 +64,7 @@
                 <mxCell id="iam" value="IAM Roles&#xa;(Execution, Task, Backup)" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.iam;fillColor=#759C3E;gradientColor=none;" parent="cloud" vertex="1">
                     <mxGeometry x="25" y="200" width="50" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="users" value="Users" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.users;fillColor=#D2D3D3;gradientColor=none;" parent="1" vertex="1">
+                <mxCell id="users" value="Admin (IP whitelist)" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.users;fillColor=#D2D3D3;gradientColor=none;" parent="1" vertex="1">
                     <mxGeometry x="20" y="130" width="50" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="conn1" value="" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="users" target="alb" edge="1">
