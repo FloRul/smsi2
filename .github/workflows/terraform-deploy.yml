@@ -1,4 +1,4 @@
-name: 'Deploy ChangeDetection.io to Lightsail'
+name: 'Deploy ChangeDetection.io'
 
 on:
   push:
