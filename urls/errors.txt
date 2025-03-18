@@ -1,0 +1,49 @@
+﻿Website 	Last Checked 	Last Changed 	
+1 	Pause checks Mute notification 	https://www.osfi-bsif.gc.ca/Fra/Docs/b15-dft.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Error - 404 (Page not found) received
+Canada ESG 	17 minutes ago 	Not yet 	
+2 	Pause checks Mute notification 	https://lddashboard.legislative.gov.in/sites/default/files/A1855-13.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Error - 404 (Page not found) received
+Inde 	9 minutes ago 	Not yet 	
+3 	Pause checks Mute notification 	https://lj.maharashtra.gov.in/Site/Upload/Acts/(43)%20Bom.%20Labour%20Welfare%20Fund%20Act%20(E)%20(H%201051).pdf [Create a link to share watch config with others] [Converting PDF to text]
+Error - 500 (Internal server error) received from the web site
+Inde 	9 minutes ago 	Not yet 	
+4 	Pause checks Mute notification 	https://www.apprenticeship.gov.in/Material/ApprenticesAct1961.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Exception: HTTPSConnectionPool(host='www.apprenticeship.gov.in', port=443): Max retries exceeded with url: /Material/ApprenticesAct1961.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbde9790350>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Inde 	9 minutes ago 	Not yet 	
+5 	Pause checks Mute notification 	https://www.apprenticeship.gov.in/Material/ApprenticeshipRules1992.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Exception: HTTPSConnectionPool(host='www.apprenticeship.gov.in', port=443): Max retries exceeded with url: /Material/ApprenticeshipRules1992.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbdeb83c9d0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Inde 	10 minutes ago 	Not yet 	
+6 	Pause checks Mute notification 	https://labour.gov.in/sites/default/files/thepaymentofwagesact1936_0.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Got HTML content but no text found (With 200 reply code)
+Inde 	9 minutes ago 	Not yet 	
+7 	Pause checks Mute notification 	https://mahakamgar.maharashtra.gov.in/images/pdf/payment-of-wages-rules-1937.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Exception: HTTPSConnectionPool(host='mahakamgar.maharashtra.gov.in', port=443): Max retries exceeded with url: /images/pdf/payment-of-wages-rules-1937.pdf (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fbdeb065cd0>, 'Connection to mahakamgar.maharashtra.gov.in timed out. (connect timeout=45)'))
+Inde 	10 minutes ago 	Not yet 	
+8 	Pause checks Mute notification 	https://www.mca.gov.in/Ministry/pdf/CompaniesAct2013.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Error - 403 (Access denied) received Try adding external proxies/locations
+Inde 	9 minutes ago 	Not yet 	
+9 	Pause checks Mute notification 	https://dor.gov.in/sites/default/files/Foreign%20Exchange%20Management%20Act%201999.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Error - 404 (Page not found) received
+Inde 	10 minutes ago 	Not yet 	
+10 	Pause checks Mute notification 	https://www.meity.gov.in/writereaddata/files/itbill2000.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Error - 404 (Page not found) received
+Inde 	9 minutes ago 	Not yet 	
+11 	Pause checks Mute notification 	https://www.meity.gov.in/writereaddata/files/GSR313E_10511%281%29_0.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Error - 404 (Page not found) received
+Inde 	10 minutes ago 	Not yet 	
+12 	Pause checks Mute notification 	https://www.meity.gov.in/writereaddata/files/Digital%20Personal%20Data%20Protection%20Act%202023.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Error - 404 (Page not found) received
+Inde 	9 minutes ago 	Not yet 	
+13 	Pause checks Mute notification 	https://www.meity.gov.in/writereaddata/files/Revised-IT-Rules-2021-proposed-amended.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Error - 404 (Page not found) received
+Inde 	10 minutes ago 	Not yet 	
+14 	Pause checks Mute notification 	https://adala.justice.gov.ma/reference/html/Fr/41434.htm [Create a link to share watch config with others]
+Error - 404 (Page not found) received
+Maroc 	1 minute ago 	Not yet 	
+15 	Pause checks Mute notification 	http://www.mca.ma/medias/La%20loi%20sur%20la%20s%C3%A9curit%C3%A9%20priv%C3%A9e%20au%20Maroc.pdf [Create a link to share watch config with others] [Converting PDF to text]
+Exception: HTTPConnectionPool(host='www.mca.ma', port=80): Max retries exceeded with url: /medias/La%20loi%20sur%20la%20s%C3%A9curit%C3%A9%20priv%C3%A9e%20au%20Maroc.pdf (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fbdea8be5d0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+Maroc 	2 minutes ago 	Not yet 	
+16 	Pause checks Mute notification 	https://www.cndp.ma/fr/espace-juridique/textes-et-lois.html#:~:text=D%C3%A9cret%202-09-165%20du%2021%20mai%202009%20pris%20pour,53-05%20relative%20%C3%A0%20l%E2%80%99%C3%A9change%20%C3%A9lectronique%20des%20donn%C3%A9es%20juridiques. [Create a link to share watch config with others]
+Exception: HTTPSConnectionPool(host='www.cndp.ma', port=443): Max retries exceeded with url: /fr/espace-juridique/textes-et-lois.html (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fbe041230d0>, 'Connection to www.cndp.ma timed out. (connect timeout=45)'))
+Maroc
