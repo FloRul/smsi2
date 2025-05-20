@@ -29,7 +29,7 @@ resource "aws_ecs_task_definition" "changedetection_task" {
       name      = "changedetection-container"
       image     = "dgtlmoon/changedetection.io:latest"
       essential = true
-      
+
       portMappings = [
         {
           containerPort = 5000
@@ -37,7 +37,7 @@ resource "aws_ecs_task_definition" "changedetection_task" {
           protocol      = "tcp"
         }
       ]
-      
+
       environment = [
         {
           name  = "WEBDRIVER_URL"
@@ -48,7 +48,7 @@ resource "aws_ecs_task_definition" "changedetection_task" {
           value = ""
         }
       ]
-      
+
       mountPoints = [
         {
           sourceVolume  = "changedetection-data"
@@ -56,7 +56,7 @@ resource "aws_ecs_task_definition" "changedetection_task" {
           readOnly      = false
         }
       ]
-      
+
       logConfiguration = {
         logDriver = "awslogs"
         options = {
@@ -70,7 +70,7 @@ resource "aws_ecs_task_definition" "changedetection_task" {
 
   volume {
     name = "changedetection-data"
-    
+
     efs_volume_configuration {
       file_system_id     = aws_efs_file_system.changedetection_data.id
       transit_encryption = "ENABLED"
@@ -110,10 +110,6 @@ resource "aws_ecs_service" "changedetection_service" {
   deployment_circuit_breaker {
     enable   = true
     rollback = true
-  }
-
-  lifecycle {
-    ignore_changes = [desired_count]
   }
 
   depends_on = [
