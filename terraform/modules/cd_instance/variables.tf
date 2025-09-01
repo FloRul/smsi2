@@ -17,3 +17,16 @@ variable "disk_size_gb" {
   default     = 8
   nullable    = false
 }
+
+variable "backup_schedule" {
+  description = "the schedule to proceed to backup the changedetection instance"
+  type        = string
+  default     = "cron(0 1 * * ? *)"
+  nullable    = false
+}
+
+variable "backup_retention_period" {
+  description = "the retention period of the changedetection instance backup (in days)"
+  type        = number
+  default     = 30
+}

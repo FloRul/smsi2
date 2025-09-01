@@ -1,8 +1,8 @@
 resource "aws_efs_file_system" "changedetection_data" {
-  creation_token = "changedetection-data"
+  creation_token   = "changedetection-data"
   performance_mode = "generalPurpose"
-  throughput_mode = "bursting"
-  encrypted       = true
+  throughput_mode  = "bursting"
+  encrypted        = true
 
   lifecycle_policy {
     transition_to_ia = "AFTER_30_DAYS"
@@ -54,10 +54,10 @@ resource "aws_backup_plan" "changedetection_backup_plan" {
   rule {
     rule_name         = "daily-backup"
     target_vault_name = aws_backup_vault.changedetection_backup_vault.name
-    schedule          = "cron(0 1 * * ? *)" # Daily at 1 AM UTC
-    
+    schedule          = var.backup_schedule
+
     lifecycle {
-      delete_after = 30 # Keep backups for 30 days
+      delete_after = var.backup_retention_period
     }
   }
 
@@ -68,7 +68,7 @@ resource "aws_backup_plan" "changedetection_backup_plan" {
 
 resource "aws_backup_vault" "changedetection_backup_vault" {
   name = "changedetection-backup-vault"
-  
+
   tags = {
     Name = "changedetection-backup-vault"
   }

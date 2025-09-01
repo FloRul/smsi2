@@ -98,7 +98,7 @@ graph TD
 - **Container**: ChangeDetection.io application
 
 ### Storage
-- **EFS File System**: Persistent storage for application data
+- **EFS File System**: Persistent storage for ChangeDetection snapshots and watches data
 - **Mount Targets**: In both public subnets
 - **Daily Backups**: Using AWS Backup
 
